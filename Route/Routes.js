@@ -16,7 +16,17 @@ routes.post('/', async (req, res) => {
 // api for getting all students data
 routes.get('/', async (req, res) => {
   try {
-    const studentData = await User.find()
+    const studentsData = await User.find()
+    res.send(studentsData)
+  } catch (error) {
+    res.send({ error: error.message })
+  }
+})
+
+// api for getting single student data
+routes.get('/:id', async (req, res) => {
+  try {
+    const studentData = await User.find({_id: req.params.id})
     res.send(studentData)
   } catch (error) {
     res.send({ error: error.message })
