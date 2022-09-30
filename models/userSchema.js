@@ -2,13 +2,25 @@ import mongoose from 'mongoose';
 
 // create schema
 const userSchema = mongoose.Schema({
-  todoTask: {
+  name: {
     type: String,
     required: true,
   },
-  complete: {
-    type: Boolean,
-    default: false,
+  email: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: Number,
+    required: true,
+  },
+  enroll: {
+    type: Number,
+    required: true,
+  },
+  admission: {
+    type: String,
+    required: true,
   },
   date: {
     type: Date,

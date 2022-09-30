@@ -7,26 +7,15 @@ const app = express()
 const port = process.env.PORT || 5000
 app.use(cors())
 
-// .env //
-// MONGODB_URI=mongodb+srv://dashboardCrudApplication:aUz88vj8r5ks82ku@cluster0.c3pdl3e.mongodb.net/?retryWrites=true&w=majority
-
-// PORT=5000
-////////
-
-//mongoose connect
-// mongoose.connect(process.env.MONGODB_URI, () => {
-//   console.log('mongodb connected')
-// })
-
+// mongoDB database connect
 dbConnect()
-
 
 // middleware
 app.use(bodyParser.json())
-app.use('/api/user', route)
+app.use('/api/v1/users', route)
 
 app.get('/', (req, res) => {
-  res.send('My Todos app running')
+  res.send('My Crud Application Running')
 })
 
 app.listen(port, () => {
