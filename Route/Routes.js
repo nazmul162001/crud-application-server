@@ -26,7 +26,7 @@ routes.get('/', async (req, res) => {
 // api for getting single student data
 routes.get('/:id', async (req, res) => {
   try {
-    const studentData = await User.find({_id: req.params.id})
+    const studentData = await User.find({ _id: req.params.id })
     res.send(studentData)
   } catch (error) {
     res.send({ error: error.message })
@@ -39,18 +39,20 @@ routes.delete('/:id', async (req, res) => {
     const deleteStudentData = await User.findByIdAndDelete(req.params.id)
     res.send(deleteStudentData)
   } catch (error) {
-    res.send({ error: error.message})
+    res.send({ error: error.message })
   }
 })
 
 // api for update student data
 routes.put('/:id', async (req, res) => {
-    try {
-        const updateStudentData = await User.findByIdAndUpdate(req.params.id, {$set: req.body}) 
-        res.send(updateStudentData)
-    } catch (error) {
-        res.send({ error: error.message })
-    }
+  try {
+    const updateStudentData = await User.findByIdAndUpdate(req.params.id, {
+      $set: req.body,
+    })
+    res.send(updateStudentData)
+  } catch (error) {
+    res.send({ error: error.message })
+  }
 })
 
 export default routes
