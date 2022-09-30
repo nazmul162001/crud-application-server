@@ -13,12 +13,12 @@ app.use(cors())
 // PORT=5000
 ////////
 
-//mongoose connect
+//mongoose connect directly
 // mongoose.connect(process.env.MONGODB_URI, () => {
 //   console.log('mongodb connected')
 // })
 
-// connect to db 
+// mongoose connect separately
 dbConnect()
 
 
