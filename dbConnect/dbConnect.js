@@ -1,13 +1,14 @@
-const mongoose = require('mongoose')
-const dotenv = require('dotenv').config()
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const dbConnect = async() => {
     try {
      await mongoose.connect(process.env.MONGODB_URI)  
-     console.log('mongo connect')
+     console.log('mongodb connect')
     } catch (error) {
         console.log(`Error: ${error.message}`);
     }
 }
 
-module.exports = dbConnect
+export default dbConnect
